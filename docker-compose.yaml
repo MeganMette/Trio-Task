@@ -2,7 +2,7 @@ version: "3.8"
 services:
   db:
     container_name: mysql
-    image: trio-db
+    image: megan1999/trio-db
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: flask-db
@@ -13,7 +13,7 @@ services:
     build: ./db
   flask-app:
     container_name: flask-app
-    image: trio-task-flask-app
+    image: megan1999/trio-task-flask-app
     build: ./db
   nginx:
     image: nginx:latest
