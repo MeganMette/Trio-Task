@@ -4,6 +4,11 @@ pipeline {
         MYSQL_ROOT_PASSWORD = CREDENTIALS("MYSQL_ROOT_PASSWORD")
     }
     stages {
+        stage("Install Dependencies"){
+            steps{
+                sh "bash install-dependencies.sh"
+            }
+        }
         stage("Build"){
             steps{
                 sh "docker-compose build --parallel"
